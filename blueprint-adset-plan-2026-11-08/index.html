@@ -15,13 +15,16 @@ small{color:var(--m);font-weight:500;font-size:14px}
 (function(){
 var b=document.getElementById('tvbtn');
 if(navigator.presentation&&navigator.presentation.receiver){b.remove();document.body.style.fontSize='26px';return;}
-var sv='intent:#Intent;action=android.settings.CAST_SETTINGS;end';
-function smartView(){window.location.href=sv;}
+var ov=document.createElement('div');
+ov.style.cssText='display:none;position:fixed;inset:0;z-index:100;background:#06070d;color:#fff;padding:40px 24px;font:800 28px/1.3 Inter,-apple-system,Roboto,sans-serif';
+ov.innerHTML='<div style="color:#22e6ff;font-size:34px;margin-bottom:24px">Mirror to TV</div><div style="margin-bottom:22px">1. Swipe down from the top of the phone with two fingers.</div><div style="margin-bottom:22px">2. Tap <span style="color:#7CFF4A">Smart View</span>.</div><div style="margin-bottom:22px">3. Tap your TV name. Tap <span style="color:#7CFF4A">Start now</span>.</div><div style="margin-bottom:22px">4. Come back to this page. Turn the phone sideways.</div><div style="color:#aab4d4;font-size:20px;font-weight:600">Phone and TV must be on the same Wi-Fi.</div><button id="ovx" style="margin-top:30px;background:#22e6ff;color:#06070d;border:0;border-radius:999px;padding:16px 28px;font:900 22px Inter,sans-serif">Close</button>';
+document.body.appendChild(ov);
+ov.querySelector('#ovx').onclick=function(){ov.style.display='none';};
 var avail=false,req=null;
 try{req=new PresentationRequest([location.href]);req.getAvailability().then(function(a){avail=a.value;a.onchange=function(){avail=a.value;};}).catch(function(){});}catch(e){}
 b.addEventListener('click',function(){
-  if(req&&avail){req.start().catch(function(){smartView();});}
-  else{smartView();}
+  if(req&&avail){req.start().catch(function(){ov.style.display='block';});}
+  else{ov.style.display='block';}
 });
 })();
 </script></body></html>
