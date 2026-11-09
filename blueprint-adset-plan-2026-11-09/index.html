@@ -1,0 +1,129 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Blueprint ad sets: 5-set rebuild ranked by intent, 9 Nov 2026</title><style>@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap');
+:root{--line:#1c2240;--m:#aab4d4;--cyan:#22e6ff;--lime:#7CFF4A;--pink:#ff3d8d;--amber:#ffb830;--vio:#c48cff;--yel:#ffe066}
+*{box-sizing:border-box}body{margin:0;background:#06070d;color:#fff;font:600 20px/1.35 Inter,-apple-system,Segoe UI,Roboto,sans-serif;padding:20px 12px 80px}
+h1{font-size:30px;margin:0 0 4px;font-weight:900;text-shadow:0 0 16px rgba(34,230,255,.5)}.sub{color:var(--m);font-size:16px;margin:0 0 14px;font-weight:500}
+h2{font-size:28px;margin:40px 0 10px;font-weight:900;color:var(--cyan);text-shadow:0 0 14px rgba(34,230,255,.6)}
+table{width:100%;table-layout:fixed;border-collapse:collapse;margin:8px 0 14px;background:#0e1120;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+th{background:#141a3a;color:var(--cyan);font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-align:left;padding:10px}
+td{padding:10px;border-top:1px solid #161b33;vertical-align:top;font-size:19px;overflow-wrap:anywhere}
+td:first-child{color:var(--m);font-weight:700;width:46%;font-size:16px;text-transform:uppercase;letter-spacing:.05em}
+.bad{color:var(--pink);text-shadow:0 0 10px rgba(255,61,141,.7)}.good{color:var(--lime);text-shadow:0 0 10px rgba(124,255,74,.6)}
+.aud{color:var(--cyan)}.exc{color:var(--pink)}.int{color:var(--vio)}.age{color:var(--amber)}.plc{color:var(--lime)}.money{color:var(--yel)}
+.bt td{font-size:17px}.bt td:first-child{width:auto;text-transform:none;letter-spacing:0;font-size:17px;color:#fff}.bt th{font-size:12px}
+small{color:var(--m);font-weight:500;font-size:14px}
+.sw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 14px}.sw table{margin:0;min-width:100%;table-layout:auto}.sw .bt td,.sw .bt th{white-space:nowrap}
+@media (orientation:landscape) and (min-width:700px){.sw{margin:0;overflow:visible}}
+</style>
+<style>
+.cbox{margin:14px 0 30px;background:#0e1120;border:1px solid #1c2240;border-radius:14px;padding:14px}
+.ct{color:#ffe066;font-size:15px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;margin-bottom:8px}
+.cbox textarea{width:100%;min-height:110px;background:#06070d;color:#fff;border:1px solid #2a3360;border-radius:10px;padding:12px;font:600 18px/1.35 Inter,-apple-system,Roboto,sans-serif;resize:vertical}
+.crow{display:flex;align-items:center;gap:12px;margin-top:10px}
+.csend{background:#ffe066;color:#06070d;border:0;border-radius:999px;padding:12px 20px;font:900 18px Inter,-apple-system,Roboto,sans-serif;box-shadow:0 0 18px rgba(255,224,102,.5)}
+.cstat{color:#aab4d4;font-size:15px;font-weight:600}
+.clist{margin-top:12px}
+.ci{border-top:1px solid #161b33;padding:10px 0;font-size:17px;font-weight:600;white-space:pre-wrap;word-break:break-word}
+.ci time{display:block;color:#aab4d4;font-size:13px;font-weight:600;margin-bottom:4px}
+.ci a{color:#22e6ff}
+@media (orientation:landscape) and (min-width:700px){.cbox{margin:10px 0 16px}.cbox textarea{min-height:70px;font-size:15px}.csend{font-size:15px;padding:9px 16px}.ci{font-size:14px}}
+
+#tvbtn{position:fixed;right:14px;bottom:14px;z-index:99;background:#22e6ff;color:#06070d;border:0;border-radius:999px;padding:16px 24px;font:900 20px Inter,-apple-system,Roboto,sans-serif;box-shadow:0 0 24px rgba(34,230,255,.8)}
+#tabs{position:sticky;top:0;z-index:50;display:flex;gap:8px;background:#06070d;padding:8px 0 10px;flex-wrap:wrap}
+#tabs button{background:#0e1120;color:#aab4d4;border:1px solid #1c2240;border-radius:999px;padding:10px 18px;font:800 18px Inter,-apple-system,Roboto,sans-serif}
+#tabs button.on{background:#22e6ff;color:#06070d;border-color:#22e6ff;box-shadow:0 0 18px rgba(34,230,255,.7)}
+.pane{display:none}.pane.on{display:block}
+.pane h2{margin-top:10px}
+@media (orientation:landscape) and (min-width:700px){
+ body{padding:10px 16px 20px;font-size:17px}
+ h1{font-size:24px}.sub{font-size:14px;margin-bottom:8px}
+ h2{font-size:24px;margin:6px 0 8px}
+ .g{display:grid;grid-template-columns:27fr 37fr 36fr;gap:12px;align-items:start}
+ .c table{margin:0 0 10px}
+ .bd{display:grid;grid-template-columns:1fr;gap:8px}.bd table{margin:0}
+ td{padding:4px 8px;font-size:16px}td:first-child{font-size:13px;width:40%}th{padding:5px 8px;font-size:11px}
+ .bt td{font-size:13px;padding:4px 5px;white-space:nowrap}.bt td:first-child{font-size:13px}.bt th{padding:5px 5px;font-size:10px}
+ .aud,.exc{font-size:12px;line-height:1.3}.int{font-size:13px}
+ small{font-size:11px}
+ #tvbtn{position:static;padding:8px 14px;font-size:14px;margin-left:auto;box-shadow:none}
+}
+</style><style>.k{background:#eef4ff;border-left:4px solid #2563eb;padding:10px 14px;margin:10px 0;border-radius:6px}.r{color:#b42318;font-weight:700}.ok{color:#067647;font-weight:700}table.bt td,table.bt th{vertical-align:top}.why{font-size:14px;color:#334155;margin:6px 0 0}.cur{color:#64748b}.hdr{background:#0f172a;color:#fff;padding:8px 12px;border-radius:6px;display:inline-block;margin:8px 0 4px}</style></head><body><h1>Blueprint ad sets: 5-set rebuild ranked by intent</h1><p class="sub">9 Nov 2026, 02:40 Israel. Answers to your five comments on the 8 Nov page. Numbers: Meta Marketing API, 10 Oct–8 Nov 2026 (30 days), campaigns ecomm-01 #118148 and ecomm-02 #118149, plus live custom-audience sizes. Purchases below are "any product" on pixel 1440305917310328; in this window they are almost all $49 Masterclass sales, which is the root of the intent problem (see lever 1).</p>
+<nav id="tabs"><button class="on" data-p="p0">Why intent is low</button><button data-p="p1">Top 5 levers</button><button data-p="p2">The 5 ad sets</button><button data-p="p3">Creatives + budget</button><button id="tvbtn">Mirror to TV</button></nav>
+
+<section class="pane on" id="p0"><h2>Why the "high intent" sets are not high intent</h2>
+<div class="k"><b>1. The audiences inside #108810 and #108814 are mostly empty.</b> Live sizes from the API: every retargeting pool (Website visitors 30d, IC 30/90d, ATC 30/90d, Leads 30/90d, Purchase 30d, "IC30 OR ATC14") and every lookalike built from them reports <span class="r">under 1,000 people</span>, which is Meta's floor for "too small to serve". The only audiences that actually deliver are three lookalikes: LLA 1% seed-382 (2.3–2.7M), Checkout-starters 180d LAL 2% (4.7–5.5M) and Julie CRM buyers LAL 2% (4.6–5.4M). A 2% lookalike of 101 buyers is 5M people modelled from 101 names: that is a cold audience with a warm label.</div>
+<div class="k"><b>2. The purchase signal is the wrong product.</b> Optimisation is PURCHASE, any product. In the last 30 days the pixel's purchases are ~$49 Masterclass buyers: 85% women, 40–53% aged 65+. Meta is therefore hunting Masterclass-buyer lookalikes for a $755 course. Blueprint has close to zero purchases in the window, so no set has a Blueprint signal to learn from.</div>
+<div class="k"><b>3. The cost is the 65+ women on Reels, not the audiences.</b> 30-day CPM in the purchase-optimised sets: women 45–54 $570–615, women 55–64 $619–711, <span class="r">women 65+ $683–842</span>; men 55–64 $401–443, men 65+ $443–525. #108814 spent 53% on 65+ and 85% on women, hence $633.</div>
+<div class="k"><b>4. #108810 and #108814 run the same audiences in two campaigns</b> (seed-382 LAL, Julie LAL 2% v2, CRM buyers 101). They bid against each other. Pause #108810 (25–65+, 18 stacked audiences, $491 CPM, 0 ATC) and let one controlled set carry the LAL budget.</div>
+<div class="k"><b>5. #108808 is cheap because it is low intent.</b> $24 CPM, 526 link clicks, 406 LP views, 0 add-to-cart. 95% Reels, 87% women, 40% 65+. These are curiosity taps, not buyers; its KPI must be ATC rate, not CPC.</div>
+<div class="sw"><table class="bt"><tr><th>30-day segment (Adset_04 #108816, the volume engine)</th><th>Spend</th><th>CPM</th><th>LPV</th><th>$/LPV</th><th>Purchases</th><th>CPP</th></tr>
+<tr><td>Women 65+</td><td>$8,372</td><td>$842</td><td>698</td><td>$12.0</td><td>28</td><td>$299</td></tr>
+<tr><td>Women 55–64</td><td>$6,503</td><td>$711</td><td>560</td><td>$11.6</td><td>20</td><td>$325</td></tr>
+<tr><td>Women 45–54</td><td>$2,842</td><td>$615</td><td>293</td><td>$9.7</td><td>10</td><td>$284</td></tr>
+<tr><td>Men 65+</td><td>$1,492</td><td>$525</td><td>103</td><td>$14.5</td><td>2</td><td>$746</td></tr>
+<tr><td class="ok">Men 55–64</td><td>$779</td><td>$443</td><td>54</td><td>$14.4</td><td>4</td><td class="ok">$195</td></tr>
+<tr><td>Women 35–44</td><td>$778</td><td>$507</td><td>51</td><td>$15.2</td><td>0</td><td>—</td></tr>
+<tr><td>Men 45–54</td><td>$255</td><td>$415</td><td>16</td><td>$15.9</td><td>0</td><td>—</td></tr></table></div>
+<p class="why">Men 55–64 are the cheapest buyers in the account (CPP $195, CPM $443) and got 2.5% of the spend. Your male-rule instinct is backed by the numbers. 35–44 spent $904 for 1 purchase: cut.</p>
+<div class="cbox" data-adset="plan-why"><div class="ct">Your comments on Why intent is low</div><textarea placeholder="Type a comment, question, link or edit for Why intent is low. It goes to Perplexity and is stored here."></textarea><div class="crow"><button class="csend">Send to Perplexity</button><span class="cstat"></span></div><div class="clist"></div></div></section>
+
+<section class="pane" id="p1"><h2>Top 5 intent levers, ranked by impact</h2>
+<div class="sw"><table class="bt"><tr><th>#</th><th>Lever</th><th>Why I am sure</th><th>Audience size</th><th>Expected CPM</th><th>Expected metrics</th></tr>
+<tr><td>1</td><td><b>Give Meta a Blueprint-only signal.</b> Create custom conversion "Blueprint checkout" = InitiateCheckout where URL contains checkout.html, and optimise the new sets on it until Blueprint purchases exceed ~15/week; then switch to a Blueprint-only Purchase custom conversion (content_name = Longevity Blueprint).</td><td>Today every set learns from $49 Masterclass buyers (older women). Checkout.html is only reached by Blueprint buyers after screen 2, so it is a product-specific intent event with volume (≈100/month in Adset_04 alone). Nothing else on this page moves intent as much.</td><td>n/a (optimisation event, not audience)</td><td>Expect CPM to fall 20–35% vs purchase-optimised sets because Meta stops bidding only on the $700+ CPM Masterclass-buyer pocket</td><td>Cost per Blueprint checkout $60–120; LPV→checkout 8–12%</td></tr>
+<tr><td>2</td><td><b>Rebuild the LAL stack from real intent only</b> (set B): LLA 1% seed-382 (signups + checkout starters) + Checkout-starters 180d LAL 1%. Drop the 2% lookalikes and the 101-buyer lookalikes.</td><td>Seed 382 is the only seed above 300 people built from Blueprint-intent actions; 1% keeps the model tight. The 2% sets double the size and halve the similarity, and they are what #108814 is burning at $633.</td><td>2.3–2.7M + 2.4–2.8M, heavy overlap; after 45–65: ≈1.4–1.9M</td><td>$350–500 (removing 65+ removes the $683–842 band)</td><td>$/LPV $11–15; ATC rate ≥4%</td></tr>
+<tr><td>3</td><td><b>Advantage+ audience on exactly one set</b>, the new warm-LAL set A.</td><td>Advantage+ expands from the seed you give it. Give it a warm LAL seed and it finds people like your checkout starters; give it an interest list and your interests and income become suggestions, which is the control you said you want to keep. Age minimum stays a hard control under Advantage+, gender and max age do not.</td><td>Seed 2.5–3.2M after 45+, expansion unbounded</td><td>$150–300 (Meta leaves the saturated 65+ women core when allowed)</td><td>$/LPV $8–12; 25–35 LPV/day at $300</td></tr>
+<tr><td>4</td><td><b>Men 45–65+, income top 10%</b> as its own set (C), equal budget to the women-skewed set.</td><td>Men 55–64 CPP $195 vs women $284–325; men's CPM is 30–45% lower. Meta cannot enforce a 50% gender share inside one set; a male-only set with matched budget is the only way to get your 50% rule.</td><td>US men 45+ in top-10% household income with longevity interests: Ads Manager estimate ≈1.5–2.5M (confirm the size dial when saving; interest sizes are not exposed by the API)</td><td>$380–480</td><td>$/LPV $12–15; CPP (any product) ≤$250</td></tr>
+<tr><td>5</td><td><b>Take 65+ and Reels out of the broad interest set</b> (E) and cut 35–44 from the volume set (D).</td><td>#108808: 406 LPV, 0 ATC, 95% Reels, 40% 65+. The Masterclass Feed winner (zoom-blue, CPP $244) proves Feed buyers exist; Reels cheap clicks do not convert. 35–44 in D: $904, 1 purchase.</td><td>E after 45–65, interests AND income AND Engaged Shoppers: ≈2–4M</td><td>E: $60–150 on Feed 45–64; D: unchanged $600–750</td><td>E KPI: ATC rate ≥3% at $/LPV $3–6</td></tr></table></div>
+<p class="why">Not recommended: adding more interests to the LAL sets (dilutes the model), stacking more sub-1,000 retargeting pools (they do not serve), 1-day-click attribution (volume too low), and Advantage+ on the interest sets (you lose age max, gender and income as controls).</p>
+<div class="cbox" data-adset="plan-levers"><div class="ct">Your comments on Top 5 levers</div><textarea placeholder="Type a comment, question, link or edit for Top 5 levers. It goes to Perplexity and is stored here."></textarea><div class="crow"><button class="csend">Send to Perplexity</button><span class="cstat"></span></div><div class="clist"></div></div></section>
+
+<section class="pane" id="p2"><h2>The 5 ad sets, full settings</h2>
+<div class="sw"><table class="bt"><tr><th>Setting</th><th>A · NEW · Warm LAL + Advantage+</th><th>B · rebuild of #108814 · LAL controlled</th><th>C · NEW · Men 45–65+ · top 10%</th><th>D · rework of #108816 · volume</th><th>E · rework of #108808 · Feed intent</th></tr>
+<tr><td>Campaign</td><td>ecomm-02 #118149</td><td>ecomm-02 #118149</td><td>ecomm-02 #118149</td><td>ecomm-02 #118149</td><td>ecomm-01 #118148</td></tr>
+<tr><td>Age</td><td><b>45 min (hard)</b>, max is a suggestion under Advantage+</td><td><b>45–65</b></td><td><b>45–65+</b></td><td><b>45–65+</b> <span class="cur">(now 35–65+)</span></td><td><b>45–65</b> <span class="cur">(now 45–65+)</span></td></tr>
+<tr><td>Gender</td><td>All (suggestion)</td><td>All</td><td><b>Men only</b></td><td>All</td><td>All</td></tr>
+<tr><td>Advantage+ audience</td><td><b>ON</b></td><td>Off</td><td>Off</td><td>Off</td><td>Off</td></tr>
+<tr><td>Included audiences</td><td>LLA 1% US seed-382 (2.3–2.7M) · LAL 1% Checkout starters 180d (2.4–2.8M) · LAL 1% Masterclass page viewers top-25% time (2.2–2.6M)</td><td>LLA 1% US seed-382 · LAL 1% Checkout starters 180d</td><td>None</td><td>None</td><td>None</td></tr>
+<tr><td>Detailed targeting</td><td>None</td><td>Narrow: Behaviours Engaged Shoppers</td><td>Longevity interests (Peter Attia, Andrew Huberman, David Sinclair, Blue Zones, Outlive, Lifespan, functional medicine, ZOE, Levels, Oura, Whoop) <b>AND</b> Household income <b>top 10%</b></td><td>41 interests as now AND (Engaged Shoppers OR income top 10–25%)</td><td>Longevity interests (as C) AND income top 10–25% AND Engaged Shoppers</td></tr>
+<tr><td>Excluded audiences</td><td>CRM paid buyers 101 · Purchase 180d</td><td>CRM paid buyers 101 · Purchase 180d</td><td>Purchase 180d · CRM paid buyers 101</td><td>Purchase 180d · CRM paid buyers 101</td><td>Purchase 180d · CRM paid buyers 101</td></tr>
+<tr><td>Platforms / positions</td><td>FB feed, FB Reels, IG feed</td><td>FB feed, FB Reels</td><td>FB feed, FB Reels, IG feed</td><td>FB feed, FB Reels, IG feed</td><td><b>FB feed, IG feed only</b> (no Reels)</td></tr>
+<tr><td>Devices</td><td>Mobile</td><td>Mobile</td><td>Mobile</td><td>Mobile <span class="cur">(drop desktop: $45, 0 ATC)</span></td><td>Mobile</td></tr>
+<tr><td>Optimisation</td><td>Custom conversion "Blueprint checkout" (lever 1); fallback PURCHASE</td><td>Same</td><td>Same</td><td>PURCHASE (keep: it is the one set with volume)</td><td>Custom conversion "Blueprint checkout"</td></tr>
+<tr><td>Bid / attribution</td><td>Lowest cost · 7d click 1d view</td><td>Lowest cost · 7d click 1d view</td><td>Lowest cost · 7d click 1d view</td><td>Lowest cost · 7d click 1d view</td><td>Lowest cost · 7d click 1d view</td></tr>
+<tr><td>Daily budget</td><td>$300</td><td>$250</td><td>$200</td><td>$300</td><td>$200</td></tr>
+<tr><td>Est. audience after filters</td><td>2.5–3.2M seed + expansion</td><td>1.4–1.9M</td><td>1.5–2.5M (confirm dial)</td><td>6–9M</td><td>2–4M</td></tr>
+<tr><td>Expected CPM</td><td>$150–300</td><td>$350–500</td><td>$380–480</td><td>$600–750</td><td>$60–150</td></tr>
+<tr><td>Expected $/LPV · KPI</td><td>$8–12 · checkouts</td><td>$11–15 · ATC ≥4%</td><td>$12–15 · CPP ≤$250</td><td>$10–13 · CPP ≤$320</td><td>$3–6 · ATC ≥3%</td></tr>
+<tr><td>Replaces</td><td>—</td><td>#108814 (pause)</td><td>—</td><td>#108816 (edit in place)</td><td>#108808 (edit in place)</td></tr></table></div>
+<p class="why">Also pause #108810 (ecomm-01 ad set 4): 25–65+, 18 stacked audiences of which 14 are under 1,000 people, $491 CPM, 0 ATC, and it duplicates B's lookalikes in a second campaign. Age split delivered: two sets on 45–65 (B, E), two on 45–65+ (C, D), A at 45+ with Advantage+. Gender: C is the male set with the same budget class as D.</p>
+<div class="cbox" data-adset="plan-adsets"><div class="ct">Your comments on The 5 ad sets</div><textarea placeholder="Type a comment, question, link or edit for The 5 ad sets. It goes to Perplexity and is stored here."></textarea><div class="crow"><button class="csend">Send to Perplexity</button><span class="cstat"></span></div><div class="clist"></div></div></section>
+
+<section class="pane" id="p3"><h2>Creatives and budget</h2>
+<div class="k"><b>Upload to all five, paused, same post IDs as today:</b> UGC Ad#17 "Woman · Five habits" (69 s; $39,272 → 124 purchases, CPP $317, 99.97% of its delivery on Reels) and UGC Ad#20 "Woman · 33 years" (75 s; CPP $353). Set A also gets the Julie Blueprint video and one Reel: zoom-blue v12 9x16 (Feed CPP $244, Reels CPP $394, the only creative that sold on both placements). Do not add the Julie card-gold Reels (CPP $824) or Ad#12 Julie 65 s (Feed CPP $761).</div>
+<div class="sw"><table class="bt"><tr><th>Set</th><th>Daily</th><th>Share</th><th>Age</th><th>Gender</th></tr>
+<tr><td>A Warm LAL + Advantage+</td><td>$300</td><td>24%</td><td>45+</td><td>All</td></tr>
+<tr><td>B LAL controlled</td><td>$250</td><td>20%</td><td>45–65</td><td>All</td></tr>
+<tr><td>C Men top 10%</td><td>$200</td><td>16%</td><td>45–65+</td><td>Men</td></tr>
+<tr><td>D Volume</td><td>$300</td><td>24%</td><td>45–65+</td><td>All</td></tr>
+<tr><td>E Feed intent</td><td>$200</td><td>16%</td><td>45–65</td><td>All</td></tr>
+<tr><td><b>Total</b></td><td><b>$1,250</b></td><td></td><td colspan="2">vs $1,216 today across the four live sets</td></tr></table></div>
+<p class="why">What I will not claim: interest-audience sizes and the CPM ranges are estimates from this account's 30-day segment data; the custom-audience sizes are live API values. None of this is built in Ads Manager yet; nothing changes until you say build.</p>
+<div class="cbox" data-adset="plan-creatives"><div class="ct">Your comments on Creatives + budget</div><textarea placeholder="Type a comment, question, link or edit for Creatives + budget. It goes to Perplexity and is stored here."></textarea><div class="crow"><button class="csend">Send to Perplexity</button><span class="cstat"></span></div><div class="clist"></div></div></section>
+<script>
+(function(){
+var API='https://lla-adset-comments.gitter-omri.workers.dev';
+function esc(t){return t.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function link(t){return esc(t).replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>')}
+function fmt(ts){var d=new Date(ts);return d.toLocaleString('en-GB',{timeZone:'Asia/Jerusalem',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})+' Israel'}
+function render(box,items){var l=box.querySelector('.clist');l.innerHTML=items.slice().reverse().map(function(i){return '<div class="ci"><time>'+fmt(i.ts)+(i.status==='seen'?' · read by Perplexity':' · sent')+'</time>'+link(i.text)+'</div>'}).join('')}
+document.querySelectorAll('.cbox').forEach(function(box){
+ var adset=box.dataset.adset,ta=box.querySelector('textarea'),st=box.querySelector('.cstat'),btn=box.querySelector('.csend');
+ var draft=localStorage.getItem('draft:'+adset);if(draft)ta.value=draft;
+ ta.addEventListener('input',function(){localStorage.setItem('draft:'+adset,ta.value)});
+ fetch(API+'/c?adset='+adset).then(function(r){return r.json()}).then(function(d){if(d.ok)render(box,d.items)}).catch(function(){});
+ btn.addEventListener('click',function(){var t=ta.value.trim();if(!t)return;btn.disabled=true;st.textContent='Sending…';
+  fetch(API+'/c',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({adset:adset,text:t,page:location.href})}).then(function(r){return r.json()}).then(function(d){
+   if(d.ok){ta.value='';localStorage.removeItem('draft:'+adset);st.textContent='Sent and stored '+fmt(d.ts);render(box,d.items)}else{st.textContent='Failed: '+(d.error||'')}btn.disabled=false;
+  }).catch(function(){st.textContent='No connection. Draft kept.';btn.disabled=false})});
+});
+})();
+</script></body></html>
