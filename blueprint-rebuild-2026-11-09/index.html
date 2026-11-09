@@ -1,105 +1,97 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Blueprint ad sets · the 9 November rebuild</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500;1,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#070b16;--bg2:#0d1324;--card:#111a30;--line:rgba(185,195,217,.14);--text:#F4F7FF;--muted:#A9B4CC;--blue:#5EB6FF;--gold:#F2C66B;--red:#FF6B6B;--green:#5BE3A5}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,#15213f 0%,var(--bg) 60%);color:var(--text);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:19px;line-height:1.5}
-.wrap{max-width:1380px;margin:0 auto;padding:56px 48px 80px}
-.kick{color:var(--blue);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:14px}
-h1{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:76px;line-height:1.02;margin:14px 0 22px;letter-spacing:-.5px}
-h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:48px;line-height:1.1;margin:0 0 10px}
-h3{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:30px;margin:0 0 8px;color:#fff}
-.lead{font-size:24px;color:var(--muted);max-width:1100px;margin:0 0 44px}
-.sec{margin-top:72px}
-.sub{color:var(--muted);font-size:20px;margin:0 0 28px;max-width:1000px}
-.vs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.col{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px 34px}
-.col.before{border-color:rgba(255,107,107,.35)}.col.now{border-color:rgba(91,227,165,.4);background:linear-gradient(160deg,#122a2e,#111a30 55%)}
-.col .tag{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+:root{--bg:#070b16;--card:#111a30;--line:rgba(185,195,217,.16);--text:#F4F7FF;--muted:#B9C3D9;--blue:#5EB6FF;--gold:#F2C66B;--red:#FF7B7B;--green:#5BE3A5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(1200px 600px at 20% -10%,#15213f 0%,var(--bg) 60%);color:var(--text);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:22px;line-height:1.45}
+.wrap{max-width:1400px;margin:0 auto;padding:56px 48px 90px}
+.kick{color:var(--blue);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:15px}
+h1{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:84px;line-height:1.0;margin:14px 0 20px}
+h2{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:56px;line-height:1.05;margin:0 0 26px}
+.lead{font-size:28px;color:var(--muted);max-width:1150px;margin:0}
+.sec{margin-top:84px}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.col{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px 36px}
+.col.before{border-color:rgba(255,123,123,.45)}.col.now{border-color:rgba(91,227,165,.5);background:linear-gradient(160deg,#12302f,#111a30 60%)}
+.col .tag{font-size:16px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .before .tag{color:var(--red)}.now .tag{color:var(--green)}
-.col ul{margin:18px 0 0;padding:0;list-style:none}
-.col li{padding:14px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:200px 1fr;gap:18px;font-size:20px}
-.col li b{color:#fff;font-weight:600}
-.levers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.lever{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 28px}
-.lever .n{font-family:"Playfair Display",serif;font-style:italic;font-size:44px;color:var(--gold);line-height:1}
-.lever h3{margin-top:10px}
-.lever p{margin:0;color:var(--muted);font-size:18px}
-.lever .arrow{display:block;margin-top:12px;font-size:19px;color:#fff}
-.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.set{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px 22px;display:flex;flex-direction:column;gap:10px}
-.set .tier{color:var(--blue);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.set h3{font-size:26px}
-.set .b{color:var(--red);font-size:16px}.set .a{color:var(--green);font-size:16px}
-.set .bud{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:18px}
-.set .bud{white-space:nowrap}.set .bud b{font-family:"Playfair Display",serif;font-style:italic;font-size:24px;color:var(--gold)}
-.set .ads{font-size:15px;color:var(--muted)}
-.target{display:grid;grid-template-columns:1.2fr repeat(3,1fr);gap:16px;align-items:stretch}
-.tcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 28px}
-.tcard .big{font-family:"Playfair Display",serif;font-style:italic;font-size:64px;color:var(--gold);line-height:1}
-.tcard .l{color:var(--muted);font-size:18px;margin-top:8px}
-.foot{margin-top:60px;color:var(--muted);font-size:15px}
-a{color:var(--blue)}
-@media(max-width:1100px){h1{font-size:48px}h2{font-size:36px}.vs,.levers,.ladder,.target{grid-template-columns:1fr}.col li{grid-template-columns:1fr}.wrap{padding:32px 20px}}
+.col h3{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:44px;margin:8px 0 18px;line-height:1.1}
+.col ul{margin:0;padding:0;list-style:none}
+.col li{padding:16px 0;border-top:1px solid var(--line);font-size:26px;display:grid;grid-template-columns:170px 1fr;gap:16px}
+.col li span:first-child{color:var(--muted);font-size:18px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding-top:6px}
+.levers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.lever{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 32px}
+.lever .n{font-family:"Playfair Display",serif;font-style:italic;font-size:30px;color:var(--gold)}
+.lever h3{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:40px;margin:6px 0 14px;line-height:1.05}
+.lever .from{color:var(--red);font-size:22px}.lever .to{color:var(--green);font-size:26px;font-weight:600;margin-top:4px}
+.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.set{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px 24px;display:flex;flex-direction:column;gap:12px}
+.set .tier{color:var(--blue);font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.set h3{font-family:"Playfair Display",serif;font-style:italic;font-weight:500;font-size:34px;margin:0;line-height:1.1}
+.set .who{font-size:21px;color:var(--muted)}
+.set .bud{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:18px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.set .bud b{display:block;font-family:"Playfair Display",serif;font-style:italic;font-size:46px;color:var(--gold);line-height:1.1;letter-spacing:0;text-transform:none}
+.set .bud b small{font-size:26px;color:var(--red);text-decoration:line-through;margin-right:10px}
+.target{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 32px}
+.tcard .big{font-family:"Playfair Display",serif;font-style:italic;font-size:80px;color:var(--gold);line-height:1}
+.tcard .l{color:var(--muted);font-size:22px;margin-top:10px}
+.foot{margin-top:60px;color:var(--muted);font-size:16px}a{color:var(--blue)}
+@media(max-width:1100px){h1{font-size:50px}h2{font-size:38px}.vs,.levers,.ladder,.target{grid-template-columns:1fr}.col li{grid-template-columns:1fr}.wrap{padding:32px 20px}}
 </style></head><body><div class="wrap">
 <div class="kick">Longevity Life Academy · Blueprint · Monday 9 November 2026</div>
 <h1>Four ad sets became five.<br>Every one now aims at people who buy.</h1>
-<p class="lead">Until 09:00 today the account bought cheap clicks from the wrong people: mostly women over 65, audiences up to 90 million wide, one ad doing all the work. Since 09:00 every ad set has an intent tier, a 45+ floor, income or buyer-lookalike targeting, men bid up where men convert, and three new films in the sets built for them.</p>
+<p class="lead">Before: cheap clicks from women over 65 on 90-million-wide audiences, one ad carrying everything. Now: five intent tiers, nobody under 45, men bid up where men buy, budget moved to the tightest audiences, three new films.</p>
 
-<div class="sec" style="margin-top:0">
+<div class="sec">
 <h2>Old strategy vs new strategy</h2>
 <div class="vs">
-  <div class="col before"><div class="tag">Before · until 9 Nov 09:00</div><h3>Buy reach, hope for buyers</h3>
-    <ul>
-      <li><b>Audience</b><span>Up to 15 stacked lists per set, twelve of them under 1,000 people; one set 90–106 million wide because "Engaged Shoppers" sat in an OR with income</span></li>
-      <li><b>Age</b><span>From 25 or 35, open-ended 65+; delivery drifted to women over 65</span></li>
-      <li><b>Gender</b><span>No bidding rules anywhere</span></li>
-      <li><b>Placements</b><span>Instagram Feed on in every set; one set on desktop</span></li>
-      <li><b>Budget</b><span>61% of spend in the two lowest-intent sets (31% + 30%)</span></li>
-      <li><b>Creative</b><span>One UGC film carrying every set; Courtney on the wrong Page with no tags; 29 ads linked to the old Instagram</span></li>
-    </ul></div>
-  <div class="col now"><div class="tag">Now · live since 9 Nov 09:00</div><h3>Rank by intent, pay for intent</h3>
-    <ul>
-      <li><b>Audience</b><span>Five tiers: paid-buyer lookalike 1% → interests AND top-25% income (24–28M) → top-10% income (10–12M) → 2% lookalikes (3.2–3.8M) → one Advantage+ set seeded with buyers</span></li>
-      <li><b>Age</b><span>Nobody under 45. Two sets stop at 64; the two that keep 65+ carry a men's bid rule</span></li>
-      <li><b>Gender</b><span>Men bid +40% in the volume set, +30% premium, +50% Advantage+ (men started 4 of the last 6 checkouts)</span></li>
-      <li><b>Placements</b><span>Facebook Feed + Reels, mobile only; Instagram stays only where it earns it (volume set, Advantage+)</span></li>
-      <li><b>Budget</b><span>51% to the two highest-intent sets (19% + 32%); low-intent tiers cut to 12% each; 25% to Advantage+</span></li>
-      <li><b>Creative</b><span>3 new ads: Man "Five habits at 50", Woman "33 years apart", Julie Gibson Clark 65s. Courtney rebuilt on the main Page. Every ad tagged to ad set and placement. 0 errors</span></li>
-    </ul></div>
+  <div class="col before"><div class="tag">Before · until 9 Nov 09:00</div><h3>Buy reach, hope for buyers</h3><ul>
+    <li><span>Audience</span><span>Up to 15 stacked lists · one set 90 million wide</span></li>
+    <li><span>Age</span><span>From 25 · drifted to women over 65</span></li>
+    <li><span>Gender</span><span>No bidding rules</span></li>
+    <li><span>Placements</span><span>Instagram everywhere · desktop on</span></li>
+    <li><span>Budget</span><span>61% in the two weakest sets</span></li>
+    <li><span>Creative</span><span>One film doing all the work · 29 broken ads</span></li>
+  </ul></div>
+  <div class="col now"><div class="tag">Now · live since 9 Nov 09:00</div><h3>Rank by intent, pay for intent</h3><ul>
+    <li><span>Audience</span><span>5 tiers: buyer lookalikes → income bands → Advantage+</span></li>
+    <li><span>Age</span><span>Nobody under 45 · two sets stop at 64</span></li>
+    <li><span>Gender</span><span>Men bid +30% to +50% where men convert</span></li>
+    <li><span>Placements</span><span>Facebook Feed + Reels, mobile · Instagram in 2 sets only</span></li>
+    <li><span>Budget</span><span>51% in the two strongest sets · 25% Advantage+</span></li>
+    <li><span>Creative</span><span>3 new films · every ad tagged · 0 errors</span></li>
+  </ul></div>
 </div></div>
 
 <div class="sec">
-<h2>The six levers we pulled</h2>
+<h2>The six levers</h2>
 <div class="levers">
-  <div class="lever"><div class="n">1</div><h3>Intent tiers</h3><p>Each set has one job and one audience definition.</p><span class="arrow">15-list stacks → buyer lookalikes, income bands, one Advantage+</span></div>
-  <div class="lever"><div class="n">2</div><h3>Age floor 45</h3><p>Stops the drift to women 65+ who click and never buy.</p><span class="arrow">25/35–65+ → 45–64 or 45+ with men's rule</span></div>
-  <div class="lever"><div class="n">3</div><h3>Bid for men</h3><p>Men start most checkouts; the seed file is 85% women.</p><span class="arrow">no rules → +30% / +40% / +50% where men convert</span></div>
-  <div class="lever"><div class="n">4</div><h3>Placements that sold</h3><p>Reels bargain inventory bought 1,000+ visits and zero carts.</p><span class="arrow">IG everywhere + desktop → FB Feed/Reels mobile, IG in 2 sets</span></div>
-  <div class="lever"><div class="n">5</div><h3>Budget follows intent</h3><p>Money moved from the widest sets to the tightest.</p><span class="arrow">61% low-intent → 51% high-intent, 25% Advantage+</span></div>
-  <div class="lever"><div class="n">6</div><h3>New creative, clean tracking</h3><p>Three films matched to the audience they were made for.</p><span class="arrow">1 ad + broken tags → 3 new ads, every click labelled</span></div>
+  <div class="lever"><div class="n">1</div><h3>Intent tiers</h3><div class="from">15-list stacks, 90M wide</div><div class="to">→ buyer lookalikes, income bands, one Advantage+</div></div>
+  <div class="lever"><div class="n">2</div><h3>Age floor 45</h3><div class="from">From 25, open 65+</div><div class="to">→ 45–64, or 45+ with a men's rule</div></div>
+  <div class="lever"><div class="n">3</div><h3>Bid for men</h3><div class="from">No rules · men started 4 of last 6 checkouts</div><div class="to">→ men +40% volume · +30% premium · +50% Advantage+</div></div>
+  <div class="lever"><div class="n">4</div><h3>Placements that sold</h3><div class="from">Reels bargain inventory: 1,000 visits, 0 carts</div><div class="to">→ Facebook Feed + Reels, mobile only</div></div>
+  <div class="lever"><div class="n">5</div><h3>Budget follows intent</h3><div class="from">61% to the two widest sets</div><div class="to">→ 51% to the two tightest · 25% Advantage+</div></div>
+  <div class="lever"><div class="n">6</div><h3>New films, clean tracking</h3><div class="from">1 ad, broken tags, wrong Page</div><div class="to">→ Man 50 · Woman 33 years apart · Julie 65s</div></div>
 </div></div>
 
 <div class="sec">
 <h2>The five ad sets, ranked by intent</h2>
-<p class="sub">Before → Now, one line each. Budget shares are the share of daily spend.</p>
 <div class="ladder">
-  <div class="set"><div class="tier">Tier 1 · highest</div><h3>Buyer lookalikes</h3><div class="b">Before: six stacked lists, 45–65+, no interests · 15%</div><div class="a">Now: paid-buyers lookalike 1% + 41 interests, 45–64 · FB Feed/Reels</div><div class="ads">Ads: Woman Five habits · Blueprint card · Julie 65s (new)</div><div class="bud">Budget <b>15% → 19%</b></div></div>
-  <div class="set"><div class="tier">Tier 2 · volume engine</div><h3>Interests + top-25% income</h3><div class="b">Before: 90–106M wide, 35–65+, desktop on · 25%</div><div class="a">Now: 24–28M, 45–65+, men +40%, mobile, FB + IG Feed/Reels</div><div class="ads">Ads: Man Five habits at 50 (new) · Woman 33 years apart (new)</div><div class="bud">Budget <b>25% → 32%</b></div></div>
-  <div class="set"><div class="tier">Tier 3 · premium</div><h3>Top-10% income</h3><div class="b">Before: same broad OR audience, Reels bargain inventory, 1,000 visits, 0 carts · 31%</div><div class="a">Now: 10–12M, men +30%, FB Feed/Reels, no exclusions, Julie fronting</div><div class="ads">Ads: Julie 65s (new) · Woman 33 years apart (new) · Woman Five habits</div><div class="bud">Budget <b>31% → 12%</b></div></div>
-  <div class="set"><div class="tier">Tier 4 · wider lookalikes</div><h3>2% lookalikes, UGC only</h3><div class="b">Before: 15 stacked lists, from age 25 · 30%</div><div class="a">Now: buyers 2% + checkout 2% lookalikes + interests, 45–64, no gender rule</div><div class="ads">Ads: Woman 33 years apart · Man Five habits at 50 · Courtney (rebuilt)</div><div class="bud">Budget <b>30% → 12%</b></div></div>
-  <div class="set"><div class="tier">Tier 5 · expansion</div><h3>Advantage+</h3><div class="b">Before: off since October · 0%</div><div class="a">Now: Advantage+ seeded with buyers lookalike + 41 interests, 45+, men +50%</div><div class="ads">Ads: Woman Five habits · Blueprint card · Julie 65s · Man Five habits at 50</div><div class="bud">Budget <b>0% → 25%</b></div></div>
+  <div class="set"><div class="tier">Tier 1 · highest</div><h3>Buyer lookalikes</h3><div class="who">People who look like our paid buyers · 45–64</div><div class="who">Ads: Woman Five habits · Blueprint card · Julie</div><div class="bud">Budget<b><small>15%</small>19%</b></div></div>
+  <div class="set"><div class="tier">Tier 2 · volume</div><h3>Top-25% income</h3><div class="who">Interests + household income · 45+ · men +40%</div><div class="who">Ads: Man 50 · Woman 33 years apart</div><div class="bud">Budget<b><small>25%</small>32%</b></div></div>
+  <div class="set"><div class="tier">Tier 3 · premium</div><h3>Top-10% income</h3><div class="who">Affluent only · 45+ · men +30% · Julie fronting</div><div class="who">Ads: Julie · Woman 33 years apart · Woman Five habits</div><div class="bud">Budget<b><small>31%</small>12%</b></div></div>
+  <div class="set"><div class="tier">Tier 4 · wider</div><h3>2% lookalikes</h3><div class="who">UGC test bed · 45–64 · no gender rule</div><div class="who">Ads: Woman 33 · Man 50 · Courtney</div><div class="bud">Budget<b><small>30%</small>12%</b></div></div>
+  <div class="set"><div class="tier">Tier 5 · expansion</div><h3>Advantage+</h3><div class="who">Meta expands from buyer lookalikes · 45+ · men +50%</div><div class="who">Ads: all four films</div><div class="bud">Budget<b><small>0%</small>25%</b></div></div>
 </div></div>
 
 <div class="sec">
-<h2>The target by Sunday 15 November</h2>
-<p class="sub">If it is not met, the project stops.</p>
+<h2>Target by Sunday 15 November — or the project stops</h2>
 <div class="target">
-  <div class="tcard"><div class="big">≈$5,000</div><div class="l">Blueprint sales in the week</div></div>
-  <div class="tcard"><div class="big">5</div><div class="l">sales from paid ads</div></div>
-  <div class="tcard"><div class="big">2</div><div class="l">organic sales from the website</div></div>
-  <div class="tcard"><div class="big">1–2</div><div class="l">sales closed by the call centre</div></div>
+  <div class="tcard"><div class="big">$5k</div><div class="l">Blueprint sales this week</div></div>
+  <div class="tcard"><div class="big">5</div><div class="l">from paid ads</div></div>
+  <div class="tcard"><div class="big">2</div><div class="l">organic from the website</div></div>
+  <div class="tcard"><div class="big">1–2</div><div class="l">closed by the call centre</div></div>
 </div></div>
-
-<p class="foot">Configuration as published in Meta Ads Manager on 9 November 2026. Gender bid rules (men +40% / +30% / +50%) published in Ads Manager, 10 November 2026 00:40. Full setting-by-setting tables: <a href="detail.html">detail view</a>.</p>
+<p class="foot">Published in Meta Ads Manager 9 Nov 2026. Men’s bid rules (+40% / +30% / +50%) published in Ads Manager 10 Nov 00:40. <a href="detail.html">Full setting-by-setting detail</a>.</p>
 </div></body></html>
