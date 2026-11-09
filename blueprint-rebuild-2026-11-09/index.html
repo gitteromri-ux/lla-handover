@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blueprint ad sets · the 9 November rebuild</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#05060A;--navy:#0A1428;--ink:#F4F7FF;--mute:#A9B4CC;--blue:#006EFF;--sky:#5EB6FF;--line:rgba(94,182,255,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(900px 500px at 15% -10%,rgba(0,110,255,.22),transparent 60%),radial-gradient(700px 400px at 90% 10%,rgba(94,182,255,.12),transparent 60%);z-index:0}
+.wrap{position:relative;z-index:1;max-width:1360px;margin:0 auto;padding:0 28px}
+.display{font-family:Fraunces,serif;font-weight:500;letter-spacing:-.02em;line-height:1.04}
+h1{font-size:clamp(44px,7vw,92px)}
+h2{font-size:clamp(32px,4.2vw,56px)}
+h3{font-size:clamp(24px,2.6vw,34px);font-family:Fraunces,serif;font-weight:500;letter-spacing:-.01em;line-height:1.1}
+.hero{padding:88px 0 56px}
+.hero p.lead{font-size:clamp(19px,1.6vw,23px);color:var(--mute);max-width:820px;margin-top:22px}
+.hero .date{color:var(--sky);font-weight:600;margin-bottom:18px;font-size:18px}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:40px}
+.chip{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:24px 24px 20px;box-shadow:0 0 0 1px rgba(0,110,255,.08),0 30px 60px -30px rgba(0,110,255,.35)}
+.chip b{display:block;font-family:Fraunces,serif;font-size:clamp(40px,4vw,58px);font-weight:500;line-height:1;color:#fff}
+.chip span{display:block;margin-top:10px;color:var(--mute);font-size:17px}
+.target{margin:56px 0 0;border-radius:28px;padding:40px;background:linear-gradient(135deg,rgba(0,110,255,.28),rgba(94,182,255,.08) 60%,rgba(255,255,255,.02));border:1px solid rgba(94,182,255,.35);box-shadow:0 0 80px -20px rgba(0,110,255,.55),inset 0 1px 0 rgba(255,255,255,.12);display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center}
+.target .big{font-family:Fraunces,serif;font-size:clamp(34px,4vw,54px);line-height:1.08;font-weight:500}
+.target ul{list-style:none;display:grid;gap:12px}
+.target li{display:flex;gap:14px;align-items:baseline;font-size:19px}
+.target li b{font-family:Fraunces,serif;font-size:34px;color:#fff;min-width:64px;line-height:1}
+.target li span{color:var(--ink)}
+.target .deadline{margin-top:18px;color:#fff;font-weight:600;font-size:19px}
+section.set{padding:72px 0 8px;border-top:1px solid rgba(255,255,255,.06);position:relative}
+.num{position:absolute;right:-10px;top:30px;font-family:Fraunces,serif;font-size:clamp(140px,18vw,260px);font-weight:300;color:rgba(94,182,255,.07);line-height:1;pointer-events:none;font-style:italic}
+.sethead{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:baseline;margin-bottom:10px}
+.sethead .camp{color:var(--sky);font-weight:600;font-size:17px}
+.sethead .tier{color:var(--mute);font-size:18px}
+.why{font-size:clamp(19px,1.5vw,22px);max-width:900px;color:var(--ink);margin:14px 0 34px}
+.grid{display:grid;grid-template-columns:200px 1fr 1fr;gap:0;border:1px solid var(--line);border-radius:24px;overflow:hidden;background:rgba(10,20,40,.55);backdrop-filter:blur(10px)}
+.grid .h{padding:16px 22px;font-weight:600;font-size:16px;color:var(--mute);background:rgba(255,255,255,.03);border-bottom:1px solid var(--line)}
+.grid .h.now{color:#fff}
+.grid .c{padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.05);font-size:17px}
+.grid .k{color:var(--mute);font-weight:600}
+.grid .before{color:#B9C3D9}
+.grid .after{color:#fff}
+.grid .after .new{display:inline-block;margin-left:8px;background:var(--blue);color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em;padding:2px 8px;border-radius:6px;vertical-align:middle;box-shadow:0 0 18px rgba(0,110,255,.6)}
+.grid .after .pend{display:inline-block;margin-left:8px;background:rgba(255,255,255,.1);color:#fff;font-size:13px;font-weight:700;padding:2px 8px;border-radius:6px;vertical-align:middle}
+.grid .c:nth-last-child(-n+3){border-bottom:0}
+.ads{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:28px 0 56px}
+.adcol{border:1px solid var(--line);border-radius:24px;padding:22px;background:rgba(255,255,255,.02)}
+.adcol.now{border-color:rgba(0,110,255,.5);box-shadow:0 0 60px -25px rgba(0,110,255,.7)}
+.adcol h4{font-size:16px;font-weight:600;color:var(--mute);margin-bottom:16px}
+.adcol.now h4{color:#fff}
+.adrow{display:flex;flex-wrap:wrap;gap:16px}
+.ad{width:150px}
+.ad img{width:150px;height:150px;border-radius:16px;object-fit:cover;display:block;box-shadow:0 20px 40px -20px rgba(0,0,0,.8)}
+.ad .cap{font-size:15px;margin-top:8px;line-height:1.3;color:var(--ink)}
+.ad .cap em{font-style:normal;color:var(--sky);font-weight:600}
+.ad .cap .new{display:inline-block;margin-left:6px;background:var(--blue);color:#fff;font-size:12px;font-weight:700;padding:1px 7px;border-radius:6px;box-shadow:0 0 16px rgba(0,110,255,.6)}
+.none{color:var(--mute);font-size:17px;padding:30px 0}
+.rules{padding:72px 0 96px;border-top:1px solid rgba(255,255,255,.06)}
+.rules .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:30px}
+.card{border:1px solid var(--line);border-radius:22px;padding:26px;background:rgba(255,255,255,.025)}
+.card b{display:block;font-family:Fraunces,serif;font-size:30px;font-weight:500;margin-bottom:10px;color:#fff;line-height:1.1}
+.card span{color:var(--mute);font-size:17px}
+footer{padding:40px 0 60px;color:var(--mute);font-size:16px;border-top:1px solid rgba(255,255,255,.06)}
+@media (max-width:900px){.target{grid-template-columns:1fr;padding:28px}.grid{grid-template-columns:1fr}.grid .h{display:none}.grid .c{border-bottom:0;padding:10px 20px}.grid .k{padding-top:18px;font-size:15px;text-transform:none}.grid .after{padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.06)}.grid .before:before{content:"Before: ";color:var(--mute);font-weight:600}.grid .after:before{content:"Now: ";color:var(--sky);font-weight:600}.ads{grid-template-columns:1fr}.num{display:none}.ad{width:128px}.ad img{width:128px;height:128px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="date">Longevity Life Academy · Blueprint · Monday 9 November 2026</div>
+  <h1 class="display">Four ad sets became five. Every one of them now aims at people who buy.</h1>
+  <p class="lead">Until this morning the account was paying for cheap clicks from the wrong people: mostly women over 65, on audiences 90 million wide, with one ad doing all the work. Today each ad set has a defined intent tier, tighter age bands, gender bidding where men convert, placements that have produced checkouts, and the two new UGC films plus Julie's video in the sets built for them.</p>
+  <div class="chips">
+    <div class="chip"><b>5</b><span>live ad sets, ranked by intent, from lookalikes of paid buyers down to Advantage+ expansion</span></div>
+    <div class="chip"><b>45+</b><span>minimum age everywhere; two sets stop at 64, two keep 65+ with a men's bidding rule</span></div>
+    <div class="chip"><b>3</b><span>new ads live: woman "33 years apart", man "Five habits at 50", Julie Gibson Clark 65s</span></div>
+    <div class="chip"><b>0</b><span>errors in Meta: 29 broken Instagram-linked ads removed, tracking tags completed on every ad</span></div>
+  </div>
+
+  <div class="target">
+    <div>
+      <div class="big">The target between now and Sunday 15 November</div>
+      <div class="deadline">If it is not met, the project stops. Roughly $5,000 in sales.</div>
+    </div>
+    <ul>
+      <li><b>5</b><span>Blueprint sales from paid ads</span></li>
+      <li><b>2</b><span>organic sales from the website</span></li>
+      <li><b>1 to 2</b><span>sales closed by the call centre</span></li>
+    </ul>
+  </div>
+</header>
+
+<!-- SET 1 -->
+<section class="set"><div class="num">01</div>
+  <div class="sethead"><h2 class="display">ecomm_Adset_02_#108814</h2><span class="camp">Campaign ecomm-02 #118149</span><span class="tier">Intent tier 1 · highest</span></div>
+  <p class="why">People who look like our paid buyers and also match the 41 longevity interests. The sure bets go here: the UGC that sold the Masterclass, the Blueprint card Reel and Julie herself.</p>
+  <div class="grid">
+    <div class="h">Setting</div><div class="h">Before (until 9 Nov, 09:00)</div><div class="h now">Now</div>
+    <div class="c k">Audience</div><div class="c before">Six stacked lists: buyer file, a checkout pool under 1,000 people, buyers lookalike 1% twice, buyers lookalike 2%, mixed-signups lookalike 1%. No interests</div><div class="c after">Paid buyers lookalike 1% US, and the 41 longevity interests <span class="new">NEW</span></div>
+    <div class="c k">Age</div><div class="c before">45 to 65+</div><div class="c after">45 to 64 <span class="new">NEW</span></div>
+    <div class="c k">Gender</div><div class="c before">All</div><div class="c after">All, no bidding rule (the buyer seed is 85% women)</div>
+    <div class="c k">Placements</div><div class="c before">Facebook Feed, Facebook Reels</div><div class="c after">Facebook Feed, Facebook Reels</div>
+    <div class="c k">Devices</div><div class="c before">Mobile</div><div class="c after">Mobile</div>
+    <div class="c k">Exclusions</div><div class="c before">None</div><div class="c after">None</div>
+    <div class="c k">Advantage+ audience</div><div class="c before">Off</div><div class="c after">Off</div>
+    <div class="c k">Share of daily budget</div><div class="c before">15%</div><div class="c after">19% <span class="new">NEW</span></div>
+  </div>
+  <div class="ads">
+    <div class="adcol"><h4>Ads live until this morning</h4><div class="adrow">
+      <div class="ad"><img src="ads/ad17.jpg" alt=""><div class="cap">Woman · Five habits<br><em>UGC 90s, Reels + Feed</em></div></div>
+      <div class="ad"><img src="ads/zoomblue.jpg" alt=""><div class="cap">Blueprint card<br><em>15s Reel + Feed</em></div></div>
+    </div></div>
+    <div class="adcol now"><h4>Ads live now</h4><div class="adrow">
+      <div class="ad"><img src="ads/ad17.jpg" alt=""><div class="cap">Woman · Five habits<br><em>UGC 90s, Reels + Feed</em></div></div>
+      <div class="ad"><img src="ads/zoomblue.jpg" alt=""><div class="cap">Blueprint card<br><em>15s Reel + Feed</em></div></div>
+      <div class="ad"><img src="ads/julie.jpg" alt=""><div class="cap">Julie Gibson Clark <span class="new">NEW</span><br><em>65s film, Feed</em></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- SET 2 -->
+<section class="set"><div class="num">02</div>
+  <div class="sethead"><h2 class="display">ecomm_Adset_04_#108816</h2><span class="camp">Campaign ecomm-02 #118149</span><span class="tier">Intent tier 2 · the volume engine</span></div>
+  <p class="why">The set that starts the most checkouts. It was 90 million people wide because "Engaged Shoppers" (120 million Americans) sat in an OR with income. Now it is interests AND top-25% household income, with men bid up because men started 4 of its last 6 checkouts.</p>
+  <div class="grid">
+    <div class="h">Setting</div><div class="h">Before (until 9 Nov, 09:00)</div><div class="h now">Now</div>
+    <div class="c k">Audience</div><div class="c before">41 longevity interests AND (Engaged Shoppers OR income top 10% OR top 10 to 25%). Estimated 90 to 106 million</div><div class="c after">41 longevity interests AND household income top 10% or top 10 to 25%. Estimated 24 to 28 million <span class="new">NEW</span></div>
+    <div class="c k">Age</div><div class="c before">35 to 65+</div><div class="c after">45 to 65+ <span class="new">NEW</span></div>
+    <div class="c k">Gender</div><div class="c before">All, no rule</div><div class="c after">All, men bid +40% <span class="pend">PENDING IN ADS MANAGER</span></div>
+    <div class="c k">Placements</div><div class="c before">Facebook Feed, Facebook Reels, Instagram Feed</div><div class="c after">Facebook Feed, Facebook Reels, Instagram Feed, Instagram Reels <span class="new">NEW</span></div>
+    <div class="c k">Devices</div><div class="c before">Mobile and desktop</div><div class="c after">Mobile only <span class="new">NEW</span></div>
+    <div class="c k">Exclusions</div><div class="c before">None</div><div class="c after">None</div>
+    <div class="c k">Advantage+ audience</div><div class="c before">Off</div><div class="c after">Off</div>
+    <div class="c k">Share of daily budget</div><div class="c before">25%</div><div class="c after">32% <span class="new">NEW</span></div>
+  </div>
+  <div class="ads">
+    <div class="adcol"><h4>Ads live until this morning</h4><div class="adrow">
+      <div class="ad"><img src="ads/ad17.jpg" alt=""><div class="cap">Woman · Five habits<br><em>UGC 90s</em></div></div>
+      <div class="ad"><img src="ads/zoomblue.jpg" alt=""><div class="cap">Blueprint card<br><em>15s Reel + Feed</em></div></div>
+    </div></div>
+    <div class="adcol now"><h4>Ads live now</h4><div class="adrow">
+      <div class="ad"><img src="ads/adB.jpg" alt=""><div class="cap">Man · Five habits at 50 <span class="new">NEW</span><br><em>UGC 74s, Reels + Feed</em></div></div>
+      <div class="ad"><img src="ads/adA.jpg" alt=""><div class="cap">Woman · 33 years apart <span class="new">NEW</span><br><em>UGC 68s, Reels + Feed</em></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- SET 3 -->
+<section class="set"><div class="num">03</div>
+  <div class="sethead"><h2 class="display">ecomm Adset 2_#108808</h2><span class="camp">Campaign ecomm-01 #118148</span><span class="tier">Intent tier 3 · top-10% income</span></div>
+  <p class="why">This set bought over a thousand visits for zero add-to-carts: Reels inventory at a fraction of the normal price, mostly women over 65. It becomes the premium-income test, with Julie fronting it, because Julie sells best to affluent audiences.</p>
+  <div class="grid">
+    <div class="h">Setting</div><div class="h">Before (until 9 Nov, 09:00)</div><div class="h now">Now</div>
+    <div class="c k">Audience</div><div class="c before">41 longevity interests AND (Engaged Shoppers OR income top 10% OR top 10 to 25%)</div><div class="c after">41 longevity interests AND household income top 10% only. Estimated 10 to 12 million <span class="new">NEW</span></div>
+    <div class="c k">Age</div><div class="c before">45 to 65+</div><div class="c after">45 to 65+</div>
+    <div class="c k">Gender</div><div class="c before">All, no rule</div><div class="c after">All, men bid +30% <span class="pend">PENDING IN ADS MANAGER</span></div>
+    <div class="c k">Placements</div><div class="c before">Facebook Feed, Facebook Reels, Instagram Feed</div><div class="c after">Facebook Feed, Facebook Reels <span class="new">NEW</span></div>
+    <div class="c k">Devices</div><div class="c before">Mobile</div><div class="c after">Mobile</div>
+    <div class="c k">Exclusions</div><div class="c before">Purchase 30 days, CRM buyers, two 2% lookalikes</div><div class="c after">None. Masterclass buyers are Blueprint prospects <span class="new">NEW</span></div>
+    <div class="c k">Advantage+ audience</div><div class="c before">Off</div><div class="c after">Off</div>
+    <div class="c k">Share of daily budget</div><div class="c before">31%</div><div class="c after">12% <span class="new">NEW</span></div>
+  </div>
+  <div class="ads">
+    <div class="adcol"><h4>Ads live until this morning</h4><div class="adrow">
+      <div class="ad"><img src="ads/ad17.jpg" alt=""><div class="cap">Woman · Five habits<br><em>UGC 90s, no tracking tags</em></div></div>
+    </div></div>
+    <div class="adcol now"><h4>Ads live now</h4><div class="adrow">
+      <div class="ad"><img src="ads/julie.jpg" alt=""><div class="cap">Julie Gibson Clark <span class="new">NEW</span><br><em>65s film, Feed</em></div></div>
+      <div class="ad"><img src="ads/adA.jpg" alt=""><div class="cap">Woman · 33 years apart <span class="new">NEW</span><br><em>UGC 68s</em></div></div>
+      <div class="ad"><img src="ads/ad17.jpg" alt=""><div class="cap">Woman · Five habits<br><em>UGC 90s, tags rebuilt</em></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- SET 4 -->
+<section class="set"><div class="num">04</div>
+  <div class="sethead"><h2 class="display">ecomm Adset 4_#108810</h2><span class="camp">Campaign ecomm-01 #118148</span><span class="tier">Intent tier 4 · wider lookalikes, UGC only</span></div>
+  <p class="why">Fifteen stacked audiences, twelve of them under 1,000 people, from age 25. Now a clean 2% lookalike tier narrowed by the interests, 45 to 64, no gender bidding, so the three UGC films get a neutral read before they scale elsewhere.</p>
+  <div class="grid">
+    <div class="h">Setting</div><div class="h">Before (until 9 Nov, 09:00)</div><div class="h now">Now</div>
+    <div class="c k">Audience</div><div class="c before">15 stacked lists: site visitors 30/90d, add-to-cart 30/90d, checkout 30/90d, leads 30/90d, Masterclass pools, buyer file, buyers lookalike 2% twice, checkout lookalike 1% and 2%, mixed-signups lookalike 1%</div><div class="c after">Paid buyers lookalike 2% US plus checkout-starters lookalike 2% US, and the 41 longevity interests. Estimated 3.2 to 3.8 million <span class="new">NEW</span></div>
+    <div class="c k">Age</div><div class="c before">25 to 65+</div><div class="c after">45 to 64 <span class="new">NEW</span></div>
+    <div class="c k">Gender</div><div class="c before">All</div><div class="c after">All, no bidding rule</div>
+    <div class="c k">Placements</div><div class="c before">Facebook Feed, Facebook Reels, Instagram Feed</div><div class="c after">Facebook Feed, Facebook Reels <span class="new">NEW</span></div>
+    <div class="c k">Devices</div><div class="c before">Mobile</div><div class="c after">Mobile</div>
+    <div class="c k">Exclusions</div><div class="c before">None</div><div class="c after">None</div>
+    <div class="c k">Advantage+ audience</div><div class="c before">Off</div><div class="c after">Off</div>
+    <div class="c k">Share of daily budget</div><div class="c before">30%</div><div class="c after">12% <span class="new">NEW</span></div>
+  </div>
+  <div class="ads">
+    <div class="adcol"><h4>Ads live until this morning</h4><div class="adrow">
+      <div class="ad"><img src="ads/ad17.jpg" alt=""><div class="cap">Woman · Five habits<br><em>UGC 90s</em></div></div>
+      <div class="ad"><img src="ads/courtney.jpg" alt=""><div class="cap">Courtney<br><em>75s film, on the secondary Page, no tracking tags</em></div></div>
+    </div></div>
+    <div class="adcol now"><h4>Ads live now</h4><div class="adrow">
+      <div class="ad"><img src="ads/adA.jpg" alt=""><div class="cap">Woman · 33 years apart <span class="new">NEW</span><br><em>UGC 68s</em></div></div>
+      <div class="ad"><img src="ads/adB.jpg" alt=""><div class="cap">Man · Five habits at 50 <span class="new">NEW</span><br><em>UGC 74s</em></div></div>
+      <div class="ad"><img src="ads/courtney.jpg" alt=""><div class="cap">Courtney<br><em>75s film, rebuilt on the main Page with full tags</em></div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- SET 5 -->
+<section class="set"><div class="num">05</div>
+  <div class="sethead"><h2 class="display">ecomm Adset 5_#108811</h2><span class="camp">Campaign ecomm-01 #118148</span><span class="tier">Intent tier 5 · Advantage+ expansion · switched on today</span></div>
+  <p class="why">A dormant ad set brought back as the one Advantage+ set. Meta is handed the paid-buyers lookalike and the 41 interests as its starting point and allowed to expand from there, with the full creative line-up including Julie.</p>
+  <div class="grid">
+    <div class="h">Setting</div><div class="h">Before (until 9 Nov, 09:00)</div><div class="h now">Now</div>
+    <div class="c k">Status</div><div class="c before">Off since October</div><div class="c after">Live <span class="new">NEW</span></div>
+    <div class="c k">Audience</div><div class="c before">Interests only, 45 to 64</div><div class="c after">Advantage+ audience on. Starting point given to Meta: paid buyers lookalike 1% US plus the 41 longevity interests <span class="new">NEW</span></div>
+    <div class="c k">Age</div><div class="c before">45 to 64</div><div class="c after">45+ as Meta's suggestion. Under Advantage+ the hard minimum Meta accepts is 25 <span class="new">NEW</span></div>
+    <div class="c k">Gender</div><div class="c before">All</div><div class="c after">All, men bid +50% <span class="pend">PENDING IN ADS MANAGER</span></div>
+    <div class="c k">Placements</div><div class="c before">Facebook Feed, Facebook Reels, Instagram Feed</div><div class="c after">Facebook Feed, Facebook Reels, Instagram Feed, Instagram Reels</div>
+    <div class="c k">Devices</div><div class="c before">Mobile</div><div class="c after">Mobile</div>
+    <div class="c k">Exclusions</div><div class="c before">None</div><div class="c after">None</div>
+    <div class="c k">Share of daily budget</div><div class="c before">0%</div><div class="c after">25% <span class="new">NEW</span></div>
+  </div>
+  <div class="ads">
+    <div class="adcol"><h4>Ads live until this morning</h4><div class="none">Nothing. The set was off.</div></div>
+    <div class="adcol now"><h4>Ads live now</h4><div class="adrow">
+      <div class="ad"><img src="ads/ad17.jpg" alt=""><div class="cap">Woman · Five habits<br><em>UGC 90s</em></div></div>
+      <div class="ad"><img src="ads/zoomblue.jpg" alt=""><div class="cap">Blueprint card<br><em>15s Reel + Feed</em></div></div>
+      <div class="ad"><img src="ads/julie.jpg" alt=""><div class="cap">Julie Gibson Clark <span class="new">NEW</span><br><em>65s film, Feed</em></div></div>
+      <div class="ad"><img src="ads/adB.jpg" alt=""><div class="cap">Man · Five habits at 50 <span class="new">NEW</span><br><em>UGC 74s</em></div></div>
+    </div></div>
+  </div>
+</section>
+
+<section class="rules">
+  <h2 class="display">Rules that now hold across the account</h2>
+  <div class="cards">
+    <div class="card"><b>Nobody under 45</b><span>Every set starts at 45. Two sets stop at 64. The two that keep 65+ carry a men's bidding rule so they do not drift to older women only.</span></div>
+    <div class="card"><b>One optimisation event</b><span>All five sets optimise for Purchase on the same Meta dataset, 7-day click and 1-day view, with the server-side tracking chain unchanged.</span></div>
+    <div class="card"><b>One Page, one Instagram</b><span>Every live ad is published from the main Longevity Life Academy Page and its Instagram account. The 29 ads tied to the old Instagram account were deleted.</span></div>
+    <div class="card"><b>Every click is labelled</b><span>Each ad carries campaign, ad set, ad and placement identifiers in its link, so CRM sales map back to the exact ad set and ad.</span></div>
+    <div class="card"><b>Instagram where it earns it</b><span>Instagram Feed and Reels stay on in the volume set and the Advantage+ set only; the three tighter sets run Facebook Feed and Reels.</span></div>
+    <div class="card"><b>Daily check</b><span>Age, gender and placement breakdowns reviewed every morning; the Advantage+ set is pulled back the moment it drifts to low-intent inventory.</span></div>
+  </div>
+</section>
+
+<footer>Longevity Life Academy · Blueprint acquisition · configuration as published in Meta Ads Manager on 9 November 2026. Settings marked PENDING are set manually in Ads Manager and confirmed separately.</footer>
+</div>
+</body>
+</html>
