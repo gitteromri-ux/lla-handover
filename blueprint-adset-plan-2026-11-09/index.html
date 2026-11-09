@@ -110,6 +110,26 @@ small{color:var(--m);font-weight:500;font-size:14px}
 <div class="cbox" data-adset="plan-creatives"><div class="ct">Your comments on Creatives + budget</div><textarea placeholder="Type a comment, question, link or edit for Creatives + budget. It goes to Perplexity and is stored here."></textarea><div class="crow"><button class="csend">Send to Perplexity</button><span class="cstat"></span></div><div class="clist"></div></div></section>
 <script>
 (function(){
+var mv=document.querySelector('meta[name=viewport]');
+function vp(){var land=window.innerWidth>window.innerHeight&&window.innerWidth>=700||(screen.orientation&&/landscape/.test(screen.orientation.type));mv.setAttribute('content',land?'width=1280':'width=device-width,initial-scale=1');}
+vp();window.addEventListener('orientationchange',function(){setTimeout(vp,50);});
+if(screen.orientation)screen.orientation.addEventListener('change',function(){setTimeout(vp,50);});
+document.querySelectorAll('#tabs button').forEach(function(b){b.onclick=function(){
+ document.querySelectorAll('#tabs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+ document.querySelectorAll('.pane').forEach(function(p){p.classList.toggle('on',p.id===b.dataset.p)});window.scrollTo(0,0);};});
+var b=document.getElementById('tvbtn');
+if(navigator.presentation&&navigator.presentation.receiver){b.remove();return;}
+var ov=document.createElement('div');
+ov.style.cssText='display:none;position:fixed;inset:0;z-index:100;background:#06070d;color:#fff;padding:40px 24px;font:800 24px/1.3 Inter,-apple-system,Roboto,sans-serif';
+ov.innerHTML='<div style="color:#22e6ff;font-size:30px;margin-bottom:20px">Mirror to TV</div><div style="margin-bottom:16px">1. Two fingers at the top edge of the phone, pull down.</div><div style="margin-bottom:16px">2. Tap <span style="color:#7CFF4A">Smart View</span>.</div><div style="margin-bottom:16px">3. Tap your TV name. Tap <span style="color:#7CFF4A">Start now</span>.</div><div style="margin-bottom:16px">4. Come back here. Turn the phone sideways.</div><button id="ovx" style="margin-top:20px;background:#22e6ff;color:#06070d;border:0;border-radius:999px;padding:14px 26px;font:900 20px Inter,sans-serif">Close</button>';
+document.body.appendChild(ov);ov.querySelector('#ovx').onclick=function(){ov.style.display='none';};
+var avail=false,req=null;
+try{req=new PresentationRequest([location.href]);req.getAvailability().then(function(a){avail=a.value;a.onchange=function(){avail=a.value;};}).catch(function(){});}catch(e){}
+b.addEventListener('click',function(){if(req&&avail){req.start().catch(function(){ov.style.display='block';});}else{ov.style.display='block';}});
+})();
+</script>
+<script>
+(function(){
 var API='https://lla-adset-comments.gitter-omri.workers.dev';
 function esc(t){return t.replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 function link(t){return esc(t).replace(/(https?:\/\/[^\s<]+)/g,'<a href="$1" target="_blank" rel="noopener">$1</a>')}
@@ -126,4 +146,4 @@ document.querySelectorAll('.cbox').forEach(function(box){
   }).catch(function(){st.textContent='No connection. Draft kept.';btn.disabled=false})});
 });
 })();
-</script></body></html>
+</script></html>
